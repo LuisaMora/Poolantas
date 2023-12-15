@@ -1,23 +1,13 @@
-<mat-toolbar class="primary mat-elevation-z3">
-  <a routerLink="./">
-    <img class="title_logo" src="/assets/logo-simple-sn-fondo.png">
-  </a>
-  <span class="text-Llajata" >LlajtaHome</span>
+<mat-toolbar style="background: #229b48; color: rgb(242, 242, 242); position: fixed; top: 0; width: 100%; z-index: 1000;" >
+  <span class="text-Llajata" >Jardin Botanico</span>
   <span class="example-spacer"></span>
   <div>
-    <button *ngIf="userRole === 'huesped'" mat-icon-button matTooltip="Mis reseñas" routerLink="./review">
-      <mat-icon>reviews</mat-icon>
-    </button>
-    <button class="text-name" mat-button (click)="cambiarRol()">
-      {{ userRole ? 'Modo ' + userRole : '' }}
-    </button>
+    <span>Administracion</span>
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>account_circle</mat-icon>
     </button>
   </div>
-
 </mat-toolbar>
-
 <mat-menu #menu="matMenu">
   <button mat-menu-item routerLink="/">
     Cerrar Sesión
