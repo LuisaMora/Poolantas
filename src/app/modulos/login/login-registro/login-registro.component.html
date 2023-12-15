@@ -1,0 +1,87 @@
+<app-login-contenedor>
+  <div>
+    <mat-card class="login mat-card-style">
+      <h2 style="text-align: center;">Registrate</h2>
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" novalidate>
+        <!-- Nombre Completo -->
+        <div class="form-group">
+          <label for="nombreCompleto">Nombre Completo *</label>
+          <input type="text" id="nombreCompleto" formControlName="nombreCompleto" placeholder="Ingrese su nombre completo (hasta 200 caracteres)">
+          <div *ngIf="registroForm.get('nombreCompleto')?.touched && registroForm.get('nombreCompleto')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('nombreCompleto')?.errors?.['required']">Este campo es obligatorio.</span>
+            <span *ngIf="registroForm.get('nombreCompleto')?.errors?.['maxlength']">El nombre no puede exceder los 200 caracteres.</span>
+          </div>
+        </div>
+
+        <!-- Teléfono Celular -->
+        <div class="form-group">
+          <label for="telefonoCelular">Teléfono Celular *</label>
+          <input type="text" id="telefonoCelular" formControlName="telefonoCelular" placeholder="Ingrese su teléfono (hasta 10 dígitos)">
+          <div *ngIf="registroForm.get('telefonoCelular')?.touched && registroForm.get('telefonoCelular')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('telefonoCelular')?.errors?.['required']">Este campo es obligatorio.</span>
+            <span *ngIf="registroForm.get('telefonoCelular')?.errors?.['pattern']">Solo se permiten números.</span>
+          </div>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="form-group">
+          <label for="correoElectronico">Correo Electrónico *</label>
+          <input type="email" id="correoElectronico" formControlName="correoElectronico" placeholder="Ingrese su correo electrónico">
+          <div *ngIf="registroForm.get('correoElectronico')?.touched && registroForm.get('correoElectronico')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('correoElectronico')?.errors?.['required']">Este campo es obligatorio.</span>
+            <span *ngIf="registroForm.get('correoElectronico')?.errors?.['email']">Ingrese un correo válido.</span>
+          </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-group">
+          <label for="contrasena">Contraseña *</label>
+          <input type="password" id="contrasena" formControlName="contrasena" placeholder="Ingrese su contraseña">
+          <div *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('contrasena')?.errors?.['required']">Este campo es obligatorio.</span>
+          </div>
+        </div>
+
+        <!-- Confirmar Contraseña -->
+        <div class="form-group">
+          <label for="confirmarContrasena">Confirmar Contraseña *</label>
+          <input type="password" id="confirmarContrasena" formControlName="confirmarContrasena" placeholder="Confirme su contraseña">
+          <div *ngIf="registroForm.get('confirmarContrasena')?.touched && registroForm.get('confirmarContrasena')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('confirmarContrasena')?.errors?.['required']">Este campo es obligatorio.</span>
+            <span *ngIf="registroForm.get('confirmarContrasena')?.errors?.['notMatching']">Las contraseñas no coinciden.</span>
+          </div>
+        </div>
+
+        <!-- Foto de Perfil -->
+        <div class="form-group">
+          <label for="fotoPerfil">Foto de Perfil *</label>
+          <input type="file" id="fotoPerfil" formControlName="fotoPerfil">
+          <div *ngIf="registroForm.get('fotoPerfil')?.touched && registroForm.get('fotoPerfil')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('fotoPerfil')?.errors?.['required']">Este campo es obligatorio.</span>
+            <span *ngIf="registroForm.get('fotoPerfil')?.errors?.['image']">Solo se permiten imágenes.</span>
+          </div>
+        </div>
+
+        <!-- Fecha de Nacimiento -->
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de Nacimiento *</label>
+          <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" max="2002-12-31" placeholder="Seleccione su fecha de nacimiento">
+          <div *ngIf="registroForm.get('fechaNacimiento')?.touched && registroForm.get('fechaNacimiento')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('fechaNacimiento')?.errors?.['required']">Este campo es obligatorio.</span>
+            <span *ngIf="registroForm.get('fechaNacimiento')?.errors?.['pastDate']">La fecha debe ser anterior al año 2002.</span>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="form-group">
+          <label for="descripcion">Descripción sobre ti *</label>
+          <textarea id="descripcion" formControlName="descripcion" placeholder="Escriba una breve descripción sobre usted"></textarea>
+          <div *ngIf="registroForm.get('descripcion')?.touched && registroForm.get('descripcion')?.invalid" class="error-message">
+            <span *ngIf="registroForm.get('descripcion')?.errors?.['required']">Este campo es obligatorio.</span>
+          </div>
+        </div>
+        <button style="width: 100%" mat-flat-button class="primary" type="submit" >Registrarse</button>
+      </form>
+    </mat-card>
+  </div>
+</app-login-contenedor>

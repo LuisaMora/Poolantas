@@ -1,0 +1,28 @@
+<app-contenedor>
+  <app-cabecera titulo="Mis Reseñas"></app-cabecera>
+  <app-cuerpo>
+    <mat-toolbar class="sub-cabecera">
+      <div>
+        <span class="hidden-sm">Mis viajes:</span>
+      </div>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
+    <section class="grid-container">
+      <div *ngFor="let propiedad of propiedades" class="grid-item">
+        <a style="text-decoration: none;">
+          <mat-card class="example-card">
+            <img mat-card-image [src]="propiedad.imageUrl" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>{{propiedad.namePropiedad}}</p>
+              <p>{{propiedad.department}}</p>
+              <p>Av Khora esquina C. Pablo Jaimes N# 240 frente al surtidor "Khora"</p>
+            </mat-card-content>
+            <mat-card-actions style="display: flex; justify-content: center">
+              <button mat-raised-button class="primary" (click)="calificar(propiedad.namePropiedad)">Calificar propiedad</button>
+            </mat-card-actions>
+          </mat-card>
+        </a>
+      </div>
+    </section>
+  </app-cuerpo>
+</app-contenedor>

@@ -1,0 +1,39 @@
+// .form-registro{
+//   border: 1px solid #ccc;
+//   padding: 10%;
+// }
+
+.form-property{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+  .map-frame {
+    border: 2px solid black;
+    height: 200px;
+    width: 50%;
+  }
+  
+  #map {
+    height: 100%;
+  }
+  
+.button-container{
+    display: flex;
+    justify-content: end;
+}
+mat-form-field{
+    width: 100%;
+}
+
+.input-number{
+  max-width: 130px; 
+}
+.grid-label{
+  display: flex;
+  justify-content: start  !important;
+}
+.input-fotos, .input-fotos-label{
+  padding: 20px 0px ;
+}

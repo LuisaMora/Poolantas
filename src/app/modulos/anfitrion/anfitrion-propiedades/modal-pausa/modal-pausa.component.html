@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Pausar propiedad</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Ingresa la fecha de inicio y fin en la que pausaras la publicacion de tu propiedad</h3>
+  <mat-form-field style="width: 100%" [appearance]="apariencia">
+    <input matInput [matDatepicker]="pickerInicio" placeholder="Fecha de Inicio" (dateChange)="fechaInicio = $event">
+    <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+    <mat-datepicker #pickerInicio></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field style="width: 100%" [appearance]="apariencia">
+    <input matInput [matDatepicker]="pickerFin" placeholder="Fecha de Fin" (dateChange)="fechaFin = $event">
+    <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+    <mat-datepicker #pickerFin></mat-datepicker>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cerrarModal()" mat-flat-button color="warn">Cancelar</button>
+  <button mat-button mat-raised-button  (click)="confirmarPausa()">Pausar</button>
+</mat-dialog-actions>
+

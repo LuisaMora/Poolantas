@@ -1,0 +1,46 @@
+<app-contenedor>
+  <app-cabecera titulo="Pago con tarjeta de crédito    |    Pago con tarjeta de débito"></app-cabecera>
+  <app-cuerpo class="contenedor-cuerpo">
+    <div class="contenedor-img">
+      <img class="title_logo" src="/assets/logos-bancos/BCP.png">
+      <img class="title_logo" src="/assets/logos-bancos/banco-sol.png">
+      <img class="title_logo" src="/assets/logos-bancos/banco-visa.png">
+      <img class="title_logo" src="/assets/logos-bancos/banco-union.jpg">
+      <img class="title_logo" src="/assets/logos-bancos/BNB.png">
+      <img class="title_logo" src="/assets/logos-bancos/banco-fie.png">
+    </div>
+      <div class="login contenedor-formulario">
+        <div class="form-row">
+          <span>Nombre del titular</span>
+          <mat-form-field [appearance]="inputApariencia">
+            <input matInput placeholder="Como aparece en la tarjeta" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <span>Número de la tarjeta</span>
+          <mat-form-field [appearance]="inputApariencia">
+            <input matInput placeholder="Como aparece en la tarjeta" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <span>Fecha de expiración</span>
+          <mat-form-field [appearance]="inputApariencia">
+            <input matInput placeholder="DD/MM/AAAA" required>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <span>Código de seguridad</span>
+          <mat-form-field [appearance]="inputApariencia">
+            <input matInput type="number" placeholder="3 dígitos">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button class="primary" mat-raised-button (click)="pagar()">Confirmar y pagar</button>
+        </div>
+      </div>
+  </app-cuerpo>
+</app-contenedor>
