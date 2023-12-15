@@ -1,0 +1,35 @@
+/* Ajustar el tamaño de las tarjetas */
+.carousel-card {
+  width: 200px; /* Ajusta el ancho según tus necesidades */
+  height: 300px; /* Ajusta la altura según tus necesidades */
+  margin: 10px; /* Ajusta el margen para espaciar las tarjetas */
+  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del tamaño */
+ 
+}
+
+/* Ajustar el padding dentro de las tarjetas */
+.mat-card-content {
+  padding: 10px; /* Ajusta el padding según tus necesidades */
+}
+
+/* Para pantallas más pequeñas, puedes querer que las tarjetas ocupen más espacio */
+@media (max-width: 768px) {
+  .carousel-card {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: auto; /* Altura automática para mantener la proporción */
+  }
+}
+
+/* Ajustar el tamaño de las imágenes dentro de las tarjetas */
+.carousel-card img {
+  width: 100%; /* Ajusta el ancho de la imagen al de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área designada sin distorsionarse */
+}
+
+/* Si quieres un tamaño específico en lugar de un ancho completo */
+.carousel-card img {
+  width: 700px; /* Ajusta el ancho según tus necesidades */
+  height: 350px; /* Ajusta la altura según tus necesidades */
+  object-fit: cover; /* O puedes usar 'contain' para evitar recortes */
+}
