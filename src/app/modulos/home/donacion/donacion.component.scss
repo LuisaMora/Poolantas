@@ -13,7 +13,7 @@
   }
   
   .image-card {
-    max-width: 1000px; // Ajusta el ancho máximo según tus necesidades
+    max-width: 900px; // Ajusta el ancho máximo según tus necesidades
     //max-height: 1000px;
     margin: 0 auto; // Centrar el card
     display: flex; // Permitir que los elementos dentro del card se distribuyan horizontalmente
@@ -35,7 +35,7 @@
     margin-bottom: 0;
     padding: 30px;
     font-size: large;
-    font-family: monospace;
+    //sfont-family: monospace;
   }
   
   img {

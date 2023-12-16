@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AnfitrionPropiedadesComponent} from "./anfitrion-propiedades/anfitrion-propiedades.component";
 import {AnfitrionRegistroComponent} from "./anfitrion-registro/anfitrion-registro.component";
 import { VerPlantaComponent } from './ver-plantas/ver-planta.component';
+import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-planta.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'ver-plantas',
     component: VerPlantaComponent,
+  },
+  {
+    path: 'registro-planta',
+    component: RegistroPlantaComponent,
   },
 
 ];

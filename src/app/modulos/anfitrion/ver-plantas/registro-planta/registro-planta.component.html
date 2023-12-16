@@ -1,1 +1,31 @@
-<p>registro-planta works!</p>
+<!-- app.component.html o tu componente específico -->
+
+<app-contenedor>
+    <app-cabecera></app-cabecera>
+    <app-cuerpo class="form-property">
+      <div class="card-container">
+        <mat-card class="login">
+          <h1>Añadir una nueva Planta</h1>
+          <form class="form-registro">
+            <p>Nombre de la Planta</p>
+            <mat-form-field>
+              <input matInput>
+            </mat-form-field>
+            <p>Categoria de la planta</p>
+            <mat-form-field>
+              <input matInput>
+            </mat-form-field>
+            <p>Descripcion de la planta</p>
+            <br>
+            <mat-form-field>
+              <textarea matInput required></textarea>
+            </mat-form-field>
+            <div class="button-container">
+              <button mat-raised-button class="green-button">Registrar</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </app-cuerpo>
+  </app-contenedor>
+  

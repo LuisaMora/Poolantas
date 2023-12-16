@@ -31,6 +31,7 @@ import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-
 
 
 
+
 @NgModule({
   declarations: [
     AnfitrionPropiedadesComponent,
