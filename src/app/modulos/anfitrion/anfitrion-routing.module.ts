@@ -16,7 +16,8 @@ const routes: Routes = [
   {
     path: 'ver-plantas',
     component: VerPlantaComponent,
-  }
+  },
+
 ];
 
 @NgModule({

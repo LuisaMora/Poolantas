@@ -27,6 +27,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { ModalRegistrarComponent } from './anfitrion-registro/modal-registrar/modal-registrar.component';
 import { VerPlantaComponent } from './ver-plantas/ver-planta.component';
+import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-planta.component';
 
 
 
@@ -37,7 +38,8 @@ import { VerPlantaComponent } from './ver-plantas/ver-planta.component';
     ModalEliminarComponent,
     ModalPublicadoComponent,
     ModalRegistrarComponent,
-    VerPlantaComponent
+    VerPlantaComponent,
+    RegistroPlantaComponent
   ],
     imports: [
         CommonModule,

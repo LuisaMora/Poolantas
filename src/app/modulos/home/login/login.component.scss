@@ -1,3 +1,6 @@
+.body{
+  background-color: aqua;
+}
 mat-card {
   width: 250px;
   margin: 0 calc(50% - (262px / 2));
@@ -16,6 +19,7 @@ mat-card {
   background: rgba(255,255,255, 0.87);
   text-align: center;
   padding: 50px;
+  //background-image: url('https://img.freepik.com/vector-gratis/fondo-hojas-verdes-dibujadas-mano_23-2149133885.jpg');
 }
 
 button:not(.mat-icon-button){
