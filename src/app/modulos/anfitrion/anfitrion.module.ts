@@ -26,7 +26,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { ModalRegistrarComponent } from './anfitrion-registro/modal-registrar/modal-registrar.component';
-//import { ModalReseniaComponent } from './anfitrion-propiedades/modal-resenia/modal-resenia.component';
+import { VerPlantaComponent } from './ver-plantas/ver-planta.component';
 
 
 
@@ -36,7 +36,8 @@ import { ModalRegistrarComponent } from './anfitrion-registro/modal-registrar/mo
     AnfitrionRegistroComponent,
     ModalEliminarComponent,
     ModalPublicadoComponent,
-    ModalRegistrarComponent
+    ModalRegistrarComponent,
+    VerPlantaComponent
   ],
     imports: [
         CommonModule,
