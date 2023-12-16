@@ -1,8 +1,20 @@
-/* Estilo CSS para el carrusel */
-.carousel-container {
+.cards-container {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+}
+
+.carousel-card {
+  flex: 0 0 auto; /* Establece el ancho de las tarjetas como automático */
+  width: 250px; /* Ajusta el ancho deseado de cada card */
+  margin-right: 16px; /* Ajusta el margen entre las cards */
+}
+.carousel-container,
+.login-homepage-carousel {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 20px 0;
 }
 
 .carousel-items {
@@ -11,10 +23,17 @@
 }
 
 .carousel-item {
-  width: 100%; /* Establece el ancho deseado */
+  width: 100%;
 }
 
-img {
-  width: 100%; /* Hace que la imagen ocupe el 100% del contenedor */
-  height: auto; /* Mantiene la proporción original de la imagen */
+.scroll-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 0 5px;
+  cursor: pointer;
 }
+
+/* Estilos específicos para el carrusel de cards */
+
