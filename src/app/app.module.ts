@@ -10,9 +10,13 @@ import {ComponentesModule} from "./componentes/componentes.module";
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListaCategoriasComponent } from './modulos/lista-categorias/lista-categorias.component';
+import { DonacionComponent } from './modulos/donacion/donacion.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaCategoriasComponent,
+    DonacionComponent
   ],
   imports: [
     BrowserModule,

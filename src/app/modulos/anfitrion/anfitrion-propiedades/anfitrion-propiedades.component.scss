@@ -44,3 +44,12 @@
   left: 8px; /* Ajusta el valor según sea necesario */
   transform: translateY(-50%);
 }
+.green-button {
+  background-color: rgb(62, 147, 62);
+  color: white; /* Texto en color blanco para mejor contraste */
+}
+.card-image {
+  width: 105%;
+  height: 300px; /* Establece la altura deseada para todas las imágenes */
+  object-fit: cover; /* Esto recortará o redimensionará la imagen para ajustarla al contenedor manteniendo la proporción */
+}

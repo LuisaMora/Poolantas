@@ -1,145 +1,30 @@
 <app-contenedor>
   <app-cabecera titulo="Registrar propiedad"></app-cabecera>
   <app-cuerpo class="form-property">
+    <br><br><br>
+    <h1>Añadir una nueva Categoria</h1>
+    <mat-card class="login">
     <form [formGroup]="formRegistro" class="form-registro">
-      <p>¿Qué tipo de alojamiento quiere ofrecer?</p>
+      <p>Nombre de la categoria</p>
       <mat-form-field [appearance]="inputApariencia">
-        <mat-label>Tipo de propiedad</mat-label>
-        <mat-select formControlName="propertyType" name="tipoPropiedad">
-          <mat-option value="Casa">Casa</mat-option>
-          <mat-option value="Departamento">Departamento</mat-option>
-          <mat-option value="Cabaña">Cabaña</mat-option>
-          <mat-option value="Habitacion">Habitación</mat-option>
-          <mat-option value="Hacienda">Hacienda</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <p>¿Cuál será la disposición del alojamiento?</p>
-      <mat-form-field [appearance]="inputApariencia">
-        <mat-label>Disposición de propiedad</mat-label>
-        <mat-select formControlName="propertyDisposition">
-          <mat-option value="option1">Disp</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <p>¿Cuál es la dirección de su propiedad?</p>
-
-      <!-- Mapa -->
-      <div class="map-frame">
-        <div id="map"></div>
-      </div>
-
-      <p>Añade más información sobre la dirección de tu propiedad para tener una dirección más precisa</p>
-      <br>
-      <mat-form-field [appearance]="inputApariencia">
-        <mat-label>Descripción de la direccion de la propiedad</mat-label>
-        <textarea matInput placeholder="Descripción de la propiedad" formControlName="propertyAddressDescript" ></textarea>
-      </mat-form-field>
-
-      <p>Agrega más información sobre tu espacio</p>
-      <mat-grid-list cols="3" rowHeight="5:1.8" >
-        <mat-grid-tile  class="grid-label">
-          <label>Número de huéspedes</label>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-form-field class="input-number" [appearance]="inputApariencia">
-            <input matInput value="0" type="number" min="1" formControlName="numberGuests">
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile
-        [colspan]="1"
-        [rowspan]="4"
-        ></mat-grid-tile>
-        <mat-grid-tile class="grid-label">
-          <label>Número de dormitorios</label>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-form-field class="input-number" [appearance]="inputApariencia">
-            <input matInput value="0" type="number" min="1" formControlName="numberBedRooms">
-          </mat-form-field>
-        </mat-grid-tile>
-        <mat-grid-tile class="grid-label">
-          <label>Número de camas</label>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-          <mat-form-field class="input-number" [appearance]="inputApariencia">
-            <input matInput value="0" type="number" min="1" formControlName="numberBeds">
-          </mat-form-field>
-        </mat-grid-tile>
-
-        <mat-grid-tile class="grid-label">
-          <label>Número de baños</label>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-form-field class="input-number" [appearance]="inputApariencia">
-            <input matInput value="0" type="number" min="1" formControlName="numberBathrooms">
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-
-      <p>Puedes agregar servicios adicionales:</p>
-      <section class="example-section">
-        <mat-checkbox formControlName="Wifi" value="1">Wifi</mat-checkbox><br>
-        <mat-checkbox formControlName="TvCable"  value="2">Tv cable</mat-checkbox><br>
-        <mat-checkbox formControlName="Cocina"  value="3">Cocina</mat-checkbox><br>
-        <mat-checkbox formControlName="Lavadora"  value="4">Lavadora</mat-checkbox><br>
-        <mat-checkbox formControlName="AireAcondicionado"  value="5">Aire acondicionado</mat-checkbox><br>
-        <mat-checkbox formControlName="Piscina"  value="6">Piscina</mat-checkbox><br>
-        <mat-checkbox formControlName="Jacuzzi"  value="7">Jacuzzi</mat-checkbox><br>
-        <mat-checkbox formControlName="EquipamientoEjercicio" value="8">Equipamiento para realizar ejercicio</mat-checkbox><br>
-        <mat-checkbox formControlName="DetectorHumo"  value="9">Detector de humo</mat-checkbox><br>
-        <mat-checkbox formControlName="Parrillero"  value="10">Parrillero</mat-checkbox><br>
-        <mat-checkbox formControlName="EstacionamientoEquipado"  value="11">Estacionamiento equipado</mat-checkbox>
-      </section>
-      <!-- <button (click)="mostrarServicios()"></button> -->
-
-      <div class="input-fotos">
-        <div class="input-fotos-label">
-          <mat-label>Añade fotos de tu propiedad </mat-label>
-        </div>
-        <input style="display: none;" id="input-fotos-files" #fileInput type="file" multiple (change)="onFileChange($event)" formControlName="inputPhotos"  accept="image/*"/>
-        <button mat-raised-button class="primary" (click)="selectFiles()">Subir Fotos</button>
-        <div id="input-fotos-preview"> </div>
-        <mat-error style="display: none;" id="input-fotos-error">
-          {{ "Se debe seleccionar 2 imágenes."}}
-        </mat-error>
-
-
-
-      </div>
-
-      <p>Agrega un nombre a tu propiedad</p>
-      <mat-form-field [appearance]="inputApariencia">
-        <mat-label>Nombre de la propiedad</mat-label>
-        <input matInput placeholder="Nombre de la propiedad" formControlName="propertyName">
+        <input matInput formControlName="propertyName">
         <mat-error *ngIf="formRegistro.get('propertyName')?.hasError('maxlength') || formRegistro.get('propertyDescription')?.hasError('minlength') || formRegistro.get('propertyDescription')?.hasError('required')">
           {{ propertyDescriptionErrorMessage('propertyName') }}
         </mat-error>
       </mat-form-field>
 
-      <p>Agrega una descripción de tu propiedad</p>
+      <p>Descripcion de la categoria</p>
       <br>
       <mat-form-field [appearance]="inputApariencia">
-        <mat-label>Descripción de la propiedad</mat-label>
-        <textarea matInput placeholder="Descripción de la propiedad" formControlName="propertyDescription" required></textarea>
-        <!-- <mat-hint align="end">{{ formRegistro.get('propertyDescription')?.value?.length || 0 }}/256 caracteres</mat-hint> -->
+        <textarea matInput  formControlName="propertyDescription" required></textarea>
         <mat-error *ngIf="formRegistro.get('propertyDescription')?.hasError('maxlength') || formRegistro.get('propertyDescription')?.hasError('minlength') || formRegistro.get('propertyDescription')?.hasError('required')">
           {{ propertyDescriptionErrorMessage('propertyDescription') }}
         </mat-error>
-
       </mat-form-field>
-
-
-      <p>Ponle un precio a tu propiedad</p>
-      <br>
-      <mat-form-field [appearance]="inputApariencia">
-        <mat-label>Ingrese el precio</mat-label>
-        <input matInput type="number" placeholder="Precio" value="0" min="1" formControlName="rentPrice">
-      </mat-form-field>
-
       <div class="button-container">
-        <button mat-raised-button class="primary" (click)="abrirModalRegistrar()">Registrar</button>
+        <button mat-raised-button class="green-button" (click)="abrirModalRegistrar()">Registrar</button>
       </div>
     </form>
+  </mat-card>
   </app-cuerpo>
 </app-contenedor>

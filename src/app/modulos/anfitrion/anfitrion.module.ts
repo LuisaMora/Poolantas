@@ -21,12 +21,12 @@ import {MatGridListModule } from '@angular/material/grid-list';
 import {ModalEliminarComponent } from './anfitrion-propiedades/modal-eliminar/modal-eliminar.component'  ;
 import {MatDialogModule} from '@angular/material/dialog';
 import {ModalPublicadoComponent } from './anfitrion-propiedades/modal-publicado/modal-publicado.component';
-import {ModalPausaComponent } from './anfitrion-propiedades/modal-pausa/modal-pausa.component';
+//import {ModalPausaComponent } from './anfitrion-propiedades/modal-pausa/modal-pausa.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { ModalRegistrarComponent } from './anfitrion-registro/modal-registrar/modal-registrar.component';
-import { ModalReseniaComponent } from './anfitrion-propiedades/modal-resenia/modal-resenia.component';
+//import { ModalReseniaComponent } from './anfitrion-propiedades/modal-resenia/modal-resenia.component';
 
 
 
@@ -36,9 +36,7 @@ import { ModalReseniaComponent } from './anfitrion-propiedades/modal-resenia/mod
     AnfitrionRegistroComponent,
     ModalEliminarComponent,
     ModalPublicadoComponent,
-    ModalPausaComponent,
-    ModalRegistrarComponent,
-    ModalReseniaComponent
+    ModalRegistrarComponent
   ],
     imports: [
         CommonModule,

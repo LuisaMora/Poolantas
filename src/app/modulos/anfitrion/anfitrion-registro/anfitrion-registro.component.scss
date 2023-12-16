@@ -1,8 +1,3 @@
-// .form-registro{
-//   border: 1px solid #ccc;
-//   padding: 10%;
-// }
-
 .form-property{
     display: flex;
     justify-content: center;
@@ -14,7 +9,6 @@
     height: 200px;
     width: 50%;
   }
-  
   #map {
     height: 100%;
   }
@@ -36,4 +30,8 @@ mat-form-field{
 }
 .input-fotos, .input-fotos-label{
   padding: 20px 0px ;
+}
+.green-button {
+  background-color: rgb(62, 147, 62);
+  color: white; /* Texto en color blanco para mejor contraste */
 }
