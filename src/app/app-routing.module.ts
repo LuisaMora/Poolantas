@@ -3,16 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import {AnfitrionModule} from "./modulos/anfitrion/anfitrion.module";
 import {AuthActiveGuard} from "./guard/auth-active.guard";
 import {AdminGuard} from "./guard/admin.guard";
-//import {HuespedModule} from "./modulos/huesped/huesped.module";
 import {EstructuraComponent} from "./componentes/estructura/estructura.component";
-//import { ListaCatego } from './modulos/lista-categorias/lista-categorias.component';
-//import { ListaCategoriasModule } from './modulos/lista-categorias.module'
-
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: '/login-home-page'},
+  
+  { 
+    path: '', 
+    redirectTo: 'home-page', 
+    pathMatch: 'full'
+  },
   {
-    path: 'login-home-page',
-    loadChildren: () => import('./modulos/login/login.module').then(m => m.LoginModule),
+    path: 'home-page',
+    loadChildren: () => import('./modulos/home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'anfitrion',

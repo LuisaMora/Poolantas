@@ -4,11 +4,11 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../common/auth.service";
 
 @Component({
-  selector: 'app-login-autenticacion',
-  templateUrl: './login-autenticacion.component.html',
-  styleUrls: ['./login-autenticacion.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class LoginAutenticacionComponent implements OnInit {
+export class LoginComponent implements OnInit {
   hide = true;
   formulario: FormGroup;
 
@@ -38,3 +38,4 @@ export class LoginAutenticacionComponent implements OnInit {
     }
   }
 }
+
