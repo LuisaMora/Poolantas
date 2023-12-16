@@ -1,6 +1,20 @@
 <app-login-contenedor>
   <div style="text-align: center;margin-bottom: 25px;">
-    <h1>Slider</h1>
+    <div class="carousel-container">
+      <button mat-icon-button (click)="prevSlide()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+
+      <div class="carousel-items">
+        <div class="carousel-item" *ngFor="let image of carouselImages; let i = index" (click)="updateSlide(i)" [hidden]="i !== currentIndex">
+          <img [src]="image" alt="Carousel Image">
+        </div>
+      </div>
+
+      <button mat-icon-button (click)="nextSlide()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
     </div>
 </app-login-contenedor>
 

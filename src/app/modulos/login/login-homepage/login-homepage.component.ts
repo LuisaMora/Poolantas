@@ -9,8 +9,19 @@ import {INPUT_APARIENCIA} from "../../../config/constantes";
 })
 export class LoginHomepageComponent implements OnInit {
 
+  carouselImages: string[] = [
+    'assets/img/planta1.jpg',
+    'assets/img/planta2.jpg',
+    'assets/img/planta3.jpg',
+    'assets/img/planta4.jpg',
+    'assets/img/planta5.jpg',
+    'assets/img/planta6.jpg',
+  ]; 
+
+  selectedImage: string | null = null;
   formulario: FormGroup;
   hide = true;
+  currentIndex: number = 0;
 
   constructor(private formBuilder: FormBuilder,) {
     this.formulario = this.formBuilder.group({
@@ -24,6 +35,17 @@ export class LoginHomepageComponent implements OnInit {
 
   login() {
 
+  }
+  prevSlide() {
+    this.currentIndex = (this.currentIndex - 1 + this.carouselImages.length) % this.carouselImages.length;
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.carouselImages.length;
+  }
+  updateSlide(index: number): void {
+    this.currentIndex = index;
+    this.selectedImage = this.carouselImages[index];
   }
 
 }

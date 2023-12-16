@@ -1,4 +1,20 @@
-button{
-  width: 40%;
+/* Estilo CSS para el carrusel */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.carousel-items {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-item {
+  width: 100%; /* Establece el ancho deseado */
+}
+
+img {
+  width: 100%; /* Hace que la imagen ocupe el 100% del contenedor */
+  height: auto; /* Mantiene la proporción original de la imagen */
+}
