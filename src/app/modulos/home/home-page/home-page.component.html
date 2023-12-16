@@ -1,8 +1,9 @@
 <app-login-contenedor>
-  <div style="text-align: center;margin-bottom: 25px;">
+  <div style="text-align: center; margin-bottom: 25px;">
+    <!-- Primer carrusel -->
     <div class="carousel-container">
       <button mat-icon-button (click)="prevSlide()">
-        <mat-icon>keyboard_arrow_left</mat-icon>
+        <mat-icon></mat-icon>
       </button>
 
       <div class="carousel-items">
@@ -12,9 +13,31 @@
       </div>
 
       <button mat-icon-button (click)="nextSlide()">
-        <mat-icon>keyboard_arrow_right</mat-icon>
+        <mat-icon></mat-icon>
       </button>
     </div>
-    </div>
-</app-login-contenedor>
+    <!-- Fin del primer carrusel -->
 
+    <!-- Segundo carrusel de Cards -->
+    <div class="login-homepage-carousel">
+      <!-- Botón Izquierdo -->
+      <button (click)="scrollLeft()" class="scroll-button left">&lt;</button>
+
+      <!-- Contenedor de las Tarjetas -->
+      <div class="cards-container" #cardsContainer>
+        <mat-card class="carousel-card" *ngFor="let card of cards">
+          <mat-card-header>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="card.image" alt="Card image">
+          
+          <p>{{ card.content }}</p>
+        </mat-card>
+      </div>
+
+      <!-- Botón Derecho -->
+      <button (click)="scrollRight()" class="scroll-button right">&gt;</button>
+    </div>
+    <!-- Fin del segundo carrusel de Cards -->
+  </div>
+</app-login-contenedor>
