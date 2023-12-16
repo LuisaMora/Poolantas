@@ -12,7 +12,7 @@ export class LoginHomepageComponent implements OnInit, OnDestroy {
 
   carouselImages: string[] = [
     'assets/img/planta1.jpg',
-    'assets/img/planta2.jpg',
+    'assets/img/planta.jpg',
     'assets/img/planta3.jpg',
     'assets/img/planta4.jpg',
     'assets/img/planta5.jpg',
@@ -20,18 +20,15 @@ export class LoginHomepageComponent implements OnInit, OnDestroy {
   ];
 
   cards: any[] = [
-    { title: 'Card 1', subtitle: 'Subtitle 1', content: 'Content for Card 1', image: 'assets/img/planta1.jpg' },
-    { title: 'Card 2', subtitle: 'Subtitle 2', content: 'Content for Card 2', image: 'assets/img/planta2.jpg' },
-    { title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3', image: 'assets/img/planta3.jpg' },
-    { title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3', image: 'assets/img/planta4.jpg' },
-    { title: 'Card 1', subtitle: 'Subtitle 1', content: 'Content for Card 1', image: 'assets/img/planta1.jpg' },
-    { title: 'Card 2', subtitle: 'Subtitle 2', content: 'Content for Card 2', image: 'assets/img/planta2.jpg' },
-    { title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3', image: 'assets/img/planta3.jpg' },
-    { title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3', image: 'assets/img/planta4.jpg' },
-    { title: 'Card 1', subtitle: 'Subtitle 1', content: 'Content for Card 1', image: 'assets/img/planta1.jpg' },
-    { title: 'Card 2', subtitle: 'Subtitle 2', content: 'Content for Card 2', image: 'assets/img/planta2.jpg' },
-    { title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3', image: 'assets/img/planta3.jpg' },
-    { title: 'Card 3', subtitle: 'Subtitle 3', content: 'Content for Card 3', image: 'assets/img/planta4.jpg' },
+    { title: 'Interiores', content: 'Son plantas que se encuentran dentro del hogar', image: 'assets/img/categoria1.jpg' },
+    { title: 'Estructura', content: 'Son consideradas plantas segun la estructura que tienen', image: 'assets/img/categoria2.jpg' },
+    { title: 'Habitad', content: 'Son plantas que se clasifican segun donde habitan', image: 'assets/img/categoria3.jpg' },
+    { title: 'Interiores', content: 'Son plantas que se encuentran dentro del hogar', image: 'assets/img/categoria1.jpg' },
+    { title: 'Estructura', content: 'Son consideradas plantas segun la estructura que tienen', image: 'assets/img/categoria2.jpg' },
+    { title: 'Habitad', content: 'Son plantas que se clasifican segun donde habitan', image: 'assets/img/categoria3.jpg' },
+    { title: 'Interiores', content: 'Son plantas que se encuentran dentro del hogar', image: 'assets/img/categoria1.jpg' },
+    { title: 'Estructura', content: 'Son consideradas plantas segun la estructura que tienen', image: 'assets/img/categoria2.jpg' },
+    { title: 'Habitad', content: 'Son plantas que se clasifican segun donde habitan', image: 'assets/img/categoria3.jpg' },
   ];
 
   cardsToShow = 3;
