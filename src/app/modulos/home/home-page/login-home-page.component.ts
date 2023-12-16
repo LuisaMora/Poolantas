@@ -3,11 +3,11 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {INPUT_APARIENCIA} from "../../../config/constantes";
 
 @Component({
-  selector: 'app-login-homepage',
-  templateUrl: './login-homepage.component.html',
-  styleUrls: ['./login-homepage.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
-export class LoginHomepageComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   carouselImages: string[] = [
     'assets/img/planta1.jpg',
