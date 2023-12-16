@@ -10,7 +10,7 @@ export class HomePageComponent implements OnInit {
   @ViewChild('cardsContainer') cardsContainer: ElementRef | undefined;
 
   carouselImages: string[] = [
-    'assets/img/planta1.jpg',
+    'assets/img/donacionfondo.jpg',
     'assets/img/planta.jpg',
     'assets/img/planta3.jpg',
     'assets/img/planta4.jpg',
