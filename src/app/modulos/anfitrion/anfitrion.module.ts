@@ -28,6 +28,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ModalRegistrarComponent } from './anfitrion-registro/modal-registrar/modal-registrar.component';
 import { VerPlantaComponent } from './ver-plantas/ver-planta.component';
 import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-planta.component';
+import { AnfitrionVideosComponent } from './anfitrion-videos/anfitrion-videos.component';
+import { RegistrarVideoComponent } from './anfitrion-videos/registrar-video/registrar-video.component';
 
 
 
@@ -40,7 +42,9 @@ import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-
     ModalPublicadoComponent,
     ModalRegistrarComponent,
     VerPlantaComponent,
-    RegistroPlantaComponent
+    RegistroPlantaComponent,
+    AnfitrionVideosComponent,
+    RegistrarVideoComponent
   ],
     imports: [
         CommonModule,
@@ -57,7 +61,7 @@ import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-
         MatCardModule,
         MatSelectModule,
         ReactiveFormsModule,
-        MatRadioModule,
+        MatRadioModule, 
         MatGridListModule,
         MatDialogModule,
         MatDatepickerModule,
