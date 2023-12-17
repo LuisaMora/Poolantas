@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Propiedad} from "../../../modelos/propiedad";
-import {AnfitrionService} from "../../../service/anfitrion.service";
 import { MatDialog } from '@angular/material/dialog';
 import { ModalEliminarComponent } from '../anfitrion-propiedades/modal-eliminar/modal-eliminar.component';
 import { ModalPublicadoComponent } from '../anfitrion-propiedades/modal-publicado/modal-publicado.component';
-//import { ModalPausaComponent } from '../anfitrion-propiedades/modal-pausa/modal-pausa.component';
-//import { ModalReseniaComponent } from './modal-resenia/modal-resenia.component';
-//import {HuespedService} from "../../../service/huesped.service";
-import { Plantas } from 'src/app/modelos/plantas';
+import { CategoryService } from 'src/app/service/category.service';
+import { Category } from 'src/app/modelos/category';
+import { Subject, takeUntil } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-anfitrion-propiedades',
@@ -16,17 +14,23 @@ import { Plantas } from 'src/app/modelos/plantas';
 })
 export class AnfitrionPropiedadesComponent implements OnInit {
 
-  categoria: Plantas[] = [];
+  categoria: Category[] = [];
+  categoyInstance = new Subject();
+  base_backend_url: string = environment.backendStorageUrl;
 
-  constructor(private anfitrionService: AnfitrionService,
-              public dialog: MatDialog ) {  }
+  constructor(public dialog: MatDialog,
+              private categoryService: CategoryService ) {  }
 
   ngOnInit(): void {
-    this.getPropiedades();
+    this.getCategorias();
   }
 
-  getPropiedades() {
-    this.anfitrionService.getCategorias().subscribe((data) => {
+  ngOnDestroy() {
+    this.categoyInstance.unsubscribe();
+  }
+
+  getCategorias() {
+    this.categoryService.getAll().pipe(takeUntil(this.categoyInstance)).subscribe((data:any) => {
       this.categoria = data;
     });
   }
