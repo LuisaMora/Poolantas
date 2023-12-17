@@ -40,8 +40,8 @@ class PlantsController extends Controller
     }
 
     public function show($id)
-    {
-        $plant = Plant::find($id);
+    { 
+        $plant = Plant::where('category_id', $id)->get();
         if(!$plant) {
             return response()->json(['mensaje' => 'No se encontró la planta'], 404);
         }
