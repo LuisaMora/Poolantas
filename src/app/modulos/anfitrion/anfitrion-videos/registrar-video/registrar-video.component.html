@@ -5,16 +5,16 @@
       <div class="card-container">
         <mat-card class="login">
           <h1 style="text-align: center;">Añadir un nuevo video</h1>
-          <form class="form-registro">
+          <form [formGroup]="formRegistro" class="form-registro">
             <p>Añadir iframe del video</p>
             <mat-form-field style="width: 100%;">
-                <textarea matInput formControlName="iframe_code"></textarea>
-              </mat-form-field>
-              <div class="center-container">
-            <div class="button-container">
-              <button mat-raised-button class="green-button" (click)="guardarDatos()">Registrar</button>
+              <textarea matInput formControlName="iframeCode"></textarea>
+            </mat-form-field>
+            <div class="center-container">
+              <div class="button-container">
+                <button mat-raised-button class="green-button" (click)="guardarDatos()" [disabled]="!formRegistro.valid">Registrar</button>
+              </div>
             </div>
-        </div>
           </form>
         </mat-card>
       </div>
