@@ -1,29 +1,29 @@
+<!-- app.component.html -->
 <app-contenedor>
-    <br>
-    <br>
-    <br>
-    <div>
-        <app-cuerpo>
-          <mat-toolbar class="sub-cabecera">
-            <div>
-              <span class="hidden-sm">Lista de videos:</span>
-            </div>
-            <span class="example-spacer"></span>
-            <button mat-raised-button class="green-button" routerLink="../registro-video">
-              <mat-icon>add_to_queue</mat-icon>
-              Añadir video
-            </button>
-          </mat-toolbar>
-          <section class="grid-container">
-            <div *ngFor="let video of videos">
-              <a [href]="video.iframe_code">{{video.iframe_code}}</a>
-              <a style="text-decoration: none;" [href]="video.iframe_code" target="_blank">
-                <mat-card class="example-card">
-                  <iframe width="500" height="315" [src]="video.iframe_code" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </mat-card>
-              </a>
-            </div>
-          </section>
-        </app-cuerpo>
-    </div>
-    </app-contenedor>
+  <br>
+  <br>
+  <br>
+  <div>
+    <app-cuerpo>
+      <mat-toolbar class="sub-cabecera">
+        <div>
+          <span class="hidden-sm">Lista de videos:</span>
+        </div>
+        <span class="example-spacer"></span>
+        <button mat-raised-button class="green-button" routerLink="../registro-video">
+          <mat-icon>add_to_queue</mat-icon>
+          Añadir video
+        </button>
+      </mat-toolbar>
+      <section class="grid-container">
+        <div >
+          <a style="text-decoration: none;" *ngFor="let video of videos">
+            <mat-card class="example-card">
+              <iframe width="500" height="315" [src]="video.iframe_code" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </mat-card>
+          </a>
+        </div>
+      </section>
+    </app-cuerpo>
+  </div>
+</app-contenedor>

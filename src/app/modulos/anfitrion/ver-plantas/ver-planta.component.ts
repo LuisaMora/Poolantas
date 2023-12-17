@@ -5,7 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
-@Component({
+@Component({ 
   selector: 'app-ver-planta',
   templateUrl: './ver-planta.component.html',
   styleUrls: ['./ver-planta.component.scss']
