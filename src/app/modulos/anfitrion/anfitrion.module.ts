@@ -30,7 +30,7 @@ import { VerPlantaComponent } from './ver-plantas/ver-planta.component';
 import { RegistroPlantaComponent } from './ver-plantas/registro-planta/registro-planta.component';
 import { AnfitrionVideosComponent } from './anfitrion-videos/anfitrion-videos.component';
 import { RegistrarVideoComponent } from './anfitrion-videos/registrar-video/registrar-video.component';
-
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 
@@ -67,7 +67,8 @@ import { RegistrarVideoComponent } from './anfitrion-videos/registrar-video/regi
         MatDatepickerModule,
         MatNativeDateModule,
         MatMenuModule,
-        FormsModule
+        FormsModule,
+        MatSnackBarModule
     ]
 })
 

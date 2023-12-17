@@ -4,19 +4,19 @@
     <br><br><br>
     <h1 style="text-align: center;">Añadir una nueva Categoria</h1>
     <mat-card class="login">
-      <form [formGroup]="formRegistro" class="form-registro">
+      <form [formGroup]="formRegistro" class="form-registro" >
         <div class="card-content">
           <div class="form-inputs-container">
             <div class="input-group">
               <p>Nombre de la categoria</p>
               <mat-form-field style="width: 80%;">
-                <input matInput formControlName="propertyName">
+                <input matInput formControlName="name">
               </mat-form-field>
             </div>
             <div class="input-group">
               <p>Descripcion de la categoria</p>
               <mat-form-field style="width: 80%;">
-                <textarea matInput formControlName="propertyDescription" required></textarea>
+                <textarea matInput formControlName="description" required></textarea>
               </mat-form-field>
             </div>
           </div>
@@ -31,8 +31,8 @@
         </div>
         <div class="button-container">
           <button mat-raised-button class="green-button" (click)="fileInput.click()">Añadir Imagen</button>
-          <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)">
-          <button mat-raised-button class="green-button">Registrar</button>
+          <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)" formControlName="img">
+          <button mat-raised-button class="green-button" type="submit" (click)="guardarDatos()">Registrar</button>
         </div>
       </form>
     </mat-card>

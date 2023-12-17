@@ -14,7 +14,7 @@ export class CategoryService {
     return this.http.get(this.BASE_URL);
   }
 
-  store(data: any) {
-    return this.http.post(this.BASE_URL, data);
+  store(data: FormData) {
+    return this.http.post<any>(this.BASE_URL, data);
   }
 }
