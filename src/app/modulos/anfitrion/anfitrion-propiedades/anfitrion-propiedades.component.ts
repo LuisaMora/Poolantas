@@ -34,16 +34,5 @@ export class AnfitrionPropiedadesComponent implements OnInit {
       this.categoria = data;
     });
   }
-  abrirModalEliminar() {
-    const dialogRef = this.dialog.open(ModalEliminarComponent, {
-      width: '400px', // Ajusta el ancho según tus necesidades
-      data: {} // pasar datos al modal
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      // Puedes realizar acciones después de cerrar el modal si es necesario
-      console.log('El modal se cerró');
-    });
-  }
   
 }
