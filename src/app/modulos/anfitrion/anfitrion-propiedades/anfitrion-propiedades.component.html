@@ -16,7 +16,7 @@
     </mat-toolbar>
     <section class="grid-container">
       <div *ngFor="let categoria of categoria" class="grid-item">
-        <a style="text-decoration: none;" routerLink="/anfitrion/ver-plantas">
+        <a style="text-decoration: none;" routerLink="/anfitrion/ver-plantas" [queryParams]="{categoriaId: categoria.id}">
           <mat-card class="example-card">
             <img mat-card-image [src]="base_backend_url+categoria.img" alt="Photo of a Shiba Inu" class="card-image">
             <mat-card-content>

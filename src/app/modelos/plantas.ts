@@ -1,8 +1,9 @@
 export interface Plantas {
     id: number;
-    nameCategoria: string;
-    type:string;
-    imageUrl: string;
+    name: string;
+    description:string;
+    img: string;
+    category_id: number;
   }
   
   
