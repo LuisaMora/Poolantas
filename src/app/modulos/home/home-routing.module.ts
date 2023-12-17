@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
 import { PlantaComponent } from './planta/planta.component';
 import { DonacionComponent } from './donacion/donacion.component';
+import { VideosComponent } from './videos/videos.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'donacion',
     component: DonacionComponent
+  },
+  {
+    path:'videos',
+    component: VideosComponent
   }
 ];
 

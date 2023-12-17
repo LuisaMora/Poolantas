@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.component';
 import { DonacionComponent } from './donacion/donacion.component';
 import { PlantaComponent } from './planta/planta.component';
+import { VideosComponent } from './videos/videos.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PlantaComponent } from './planta/planta.component';
     LoginComponent,
     ListaCategoriasComponent,
     DonacionComponent,
-    PlantaComponent
+    PlantaComponent,
+    VideosComponent
   ],
     imports: [
         CommonModule,
@@ -35,7 +38,8 @@ import { PlantaComponent } from './planta/planta.component';
         MatIconModule,
         MatNativeDateModule,
         ComponentesModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatGridListModule
     ]
 })
 export class HomeModule { }
