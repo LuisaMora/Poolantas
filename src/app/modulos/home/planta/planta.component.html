@@ -3,6 +3,7 @@
     <app-cuerpo>
       <section class="grid-container">
         <div *ngFor="let planta of plantas" class="grid-item">
+          <a style="text-decoration: none;cursor: pointer;" (click)="verDetalle(planta.id)">
             <mat-card class="example-card">
               <img mat-card-image [src]="base_backend_url+planta.img" alt="Photo of a Shiba Inu" class="card-image">
               <mat-card-content>
@@ -10,6 +11,7 @@
                 <p>{{planta.description}}</p>
               </mat-card-content>
             </mat-card>
+          </a>
         </div>
       </section>
     </app-cuerpo>

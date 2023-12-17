@@ -17,6 +17,7 @@ import { DonacionComponent } from './donacion/donacion.component';
 import { PlantaComponent } from './planta/planta.component';
 import { VideosComponent } from './videos/videos.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { DetallePlantaComponent } from './detalle-planta/detalle-planta.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     ListaCategoriasComponent,
     DonacionComponent,
     PlantaComponent,
-    VideosComponent
+    VideosComponent,
+    DetallePlantaComponent
   ],
     imports: [
         CommonModule,

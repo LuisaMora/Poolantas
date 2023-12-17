@@ -1,0 +1,14 @@
+<app-login-contenedor>
+    <section class="grid-container" style="margin-top: 20px;">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{plant.name}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="base_backend_url+plant.img" alt="Photo of a Shiba Inu" class="card-image">
+            <mat-card-content>
+              
+              <p>{{plant.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </section>
+</app-login-contenedor>

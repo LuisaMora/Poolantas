@@ -6,6 +6,7 @@ import { ListaCategoriasComponent } from './lista-categorias/lista-categorias.co
 import { PlantaComponent } from './planta/planta.component';
 import { DonacionComponent } from './donacion/donacion.component';
 import { VideosComponent } from './videos/videos.component';
+import { DetallePlantaComponent } from './detalle-planta/detalle-planta.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path:'videos',
     component: VideosComponent
+  },
+  {
+    path:'detallePlanta',
+    component: DetallePlantaComponent
   }
 ];
 

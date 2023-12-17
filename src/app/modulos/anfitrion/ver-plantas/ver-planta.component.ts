@@ -30,7 +30,7 @@ export class VerPlantaComponent implements OnInit {
   }
 
   cargarPlantas() {
-    this.plantasService.getAll(this.categoria_id).pipe(takeUntil(this.categoyInstance)).subscribe((data:any) => {
+    this.plantasService.get(this.categoria_id).pipe(takeUntil(this.categoyInstance)).subscribe((data:any) => {
       console.log(data);
       this.plantas = data;
     });

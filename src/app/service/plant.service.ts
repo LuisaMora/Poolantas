@@ -9,10 +9,10 @@ export class PlantService {
   private BASE_URL = `${environment.backendUrl}/plants`;
   constructor(private http: HttpClient) { }
 
-  getAll(id_category: number) {
+  get(id_category: number) {
     return this.http.get(this.BASE_URL+'/'+id_category);
   }
-  get() {
+  getAll() {
     return this.http.get(this.BASE_URL);
   }
 
