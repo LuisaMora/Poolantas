@@ -15,10 +15,11 @@
             </button>
           </mat-toolbar>
           <section class="grid-container">
-            <div>
-              <a style="text-decoration: none;" routerLink="/anfitrion/ver-plantas">
+            <div *ngFor="let video of videos">
+              <a [href]="video.iframe_code">{{video.iframe_code}}</a>
+              <a style="text-decoration: none;" [href]="video.iframe_code" target="_blank">
                 <mat-card class="example-card">
-                  <iframe width="500" height="315" src="https://www.youtube.com/embed/MjhfRArh1-0?si=xE0KdCAPWi05UU23" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="500" height="315" [src]="video.iframe_code" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </mat-card>
               </a>
             </div>

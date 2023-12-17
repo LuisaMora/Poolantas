@@ -15,8 +15,12 @@ class VideosController extends Controller
 
     public function store(Request $request)
     {
+        $cadena = $request->iframe_code;
+        $patron = '/src="(.*?)"/';
+        preg_match($patron, $cadena, $coincidencias);
+        $coicidencia =  $coincidencias[1];
         $video = new Video();
-        $video->iframe_code = $request->iframe_code;
+        $video->iframe_code = $coicidencia;
         $video->save();
         return response()->json($video, 201);
     }
