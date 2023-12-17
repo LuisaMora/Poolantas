@@ -1,25 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { INPUT_APARIENCIA } from "../../../config/constantes";
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidatorFn } from "@angular/forms";
-import * as L from 'leaflet';
-import { HttpClient } from '@angular/common/http';
-import { ModalRegistrarComponent } from './modal-registrar/modal-registrar.component';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-const iconRetinaUrl = 'assets/marker-icon-2x.png';
-const iconUrl = 'assets/marker-icon.png';
-const shadowUrl = 'assets/marker-shadow.png';
-const iconDefault = L.icon({
-  iconRetinaUrl,
-  iconUrl,
-  shadowUrl,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  tooltipAnchor: [16, -28],
-  shadowSize: [41, 41]
-});
-L.Marker.prototype.options.icon = iconDefault;
 
 @Component({
   selector: 'app-anfitrion-registro',
@@ -27,43 +8,46 @@ L.Marker.prototype.options.icon = iconDefault;
   styleUrls: ['./anfitrion-registro.component.scss']
 })
 export class AnfitrionRegistroComponent implements OnInit {
+  @ViewChild('fileInput') fileInput!: ElementRef;
+  formRegistro: FormGroup; 
+  selectedFile: File | null = null;
+  previewUrl: string | ArrayBuffer | null = null;
 
-  formRegistro: FormGroup;
-  selectedFiles: File[] = [];
-  direccion: string = '';
-
-//variabels para el mapa
-  @ViewChild('fileInput') fileInput: any;
-  @ViewChild('inputFotos') fileInputFotos: any;
-  private marker: any;
-  private map: any;
-  private adress: any;
-// fin variables para el mapa
-
-  constructor(private fb: FormBuilder, private http: HttpClient, public dialog: MatDialog) {
-    const commonFields = ['propertyType','propertyDisposition','propertyAddressDescript',
-      'numberGuests','numberBedRooms','numberBeds','numberBathrooms','Wifi','TvCable','Cocina','Lavadora',
-      'AireAcondicionado','Piscina','Jacuzzi','EquipamientoEjercicio','DetectorHumo','Parrillero',
-      'EstacionamientoEquipado','inputPhotos', 'rentPrice'
-    ];
+  constructor(private fb: FormBuilder) {
     this.formRegistro = this.fb.group({
       propertyName: ['', [Validators.required, Validators.maxLength(32)]],
       propertyDescription: ['', [Validators.required, Validators.maxLength(256)]],
-    });
-    commonFields.forEach((field) => {
-      this.formRegistro.addControl(field, this.fb.control(''));
+      image: [null, Validators.required], // Agrega un FormControl para la imagen
     });
   }
-  ngOnInit() {
+
+  ngOnInit() {}
+
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+      this.getBase64(file).then((data) => {
+        this.previewUrl = data;
+      });
+    }
   }
+
+  private getBase64(file: File): Promise<string | ArrayBuffer> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = (error) => reject(error);
+    });
+  }
+
   guardarDatos() {
     if (this.formRegistro.valid) {
       const datosFormulario = this.formRegistro.value;
       console.log('Datos del formulario:', datosFormulario);
 
-      // Aquí puedes realizar otras acciones, como enviar los datos al servidor, etc.
+      // También puedes enviar la imagen al servidor o realizar otras acciones aquí
     }
   }
-
 }
-

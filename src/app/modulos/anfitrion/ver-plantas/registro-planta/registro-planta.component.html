@@ -1,26 +1,40 @@
 <app-contenedor>
-    <app-cabecera></app-cabecera>
-    <!--iframe width="560" height="315" src="https://www.youtube.com/embed/2gFdGx0wllA?si=1I9sukR_rzlyCBx5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
-    <app-cuerpo class="form-property">
-      <div class="card-container">
-        <mat-card class="login">
-          <h1>Añadir una nueva Planta</h1>
-          <form class="form-registro">
-            <p>Nombre de la Planta</p>
-            <mat-form-field>
-              <input matInput>
-            </mat-form-field>
-            <p>Descripcion de la planta</p>
-            <br>
-            <mat-form-field>
-              <textarea matInput required></textarea>
-            </mat-form-field>
-            <div class="button-container">
-              <button mat-raised-button class="green-button">Registrar</button>
+  <app-cabecera></app-cabecera>
+  <app-cuerpo class="form-property">
+    <br><br><br>
+    <h1 style="text-align: center;">Añadir una nueva Planta</h1>
+    <mat-card class="login">
+      <form [formGroup]="formRegistro" class="form-registro">
+        <div class="card-content">
+          <div class="form-inputs-container">
+            <div class="input-group">
+              <p>Nombre de la planta</p>
+              <mat-form-field style="width: 80%;">
+                <input matInput formControlName="propertyName">
+              </mat-form-field>
             </div>
-          </form>
-        </mat-card>
-      </div>
-    </app-cuerpo>
-  </app-contenedor>
-  
+            <div class="input-group">
+              <p>Descripcion de la planta</p>
+              <mat-form-field style="width: 80%;">
+                <textarea matInput formControlName="propertyDescription" required></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="image-preview-container">
+            <div *ngIf="!previewUrl" class="placeholder">
+              <p>Espacio para la imagen</p>
+            </div>
+            <div *ngIf="previewUrl">
+              <img [src]="previewUrl" alt="Previsualización de la imagen" class="preview-image">
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button mat-raised-button class="green-button" (click)="fileInput.click()">Añadir Imagen</button>
+          <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)">
+          <button mat-raised-button class="green-button">Registrar</button>
+        </div>
+      </form>
+    </mat-card>
+  </app-cuerpo>
+</app-contenedor>
