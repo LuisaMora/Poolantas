@@ -8,11 +8,11 @@
           <form class="form-registro">
             <p>Añadir iframe del video</p>
             <mat-form-field style="width: 100%;">
-                <textarea matInput required></textarea>
+                <textarea matInput formControlName="iframe_code"></textarea>
               </mat-form-field>
               <div class="center-container">
             <div class="button-container">
-              <button mat-raised-button class="green-button">Registrar</button>
+              <button mat-raised-button class="green-button" (click)="guardarDatos()">Registrar</button>
             </div>
         </div>
           </form>
