@@ -10,6 +10,10 @@ export class PlantService {
   constructor(private http: HttpClient) { }
 
   getAll(id_category: number) {
-    return this.http.get(this.BASE_URL+'/category/'+id_category);
+    return this.http.get(this.BASE_URL+'/'+id_category);
+  }
+
+  store(data: FormData) {
+    return this.http.post(this.BASE_URL, data);
   }
 }

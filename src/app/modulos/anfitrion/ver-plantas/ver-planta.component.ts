@@ -3,6 +3,7 @@ import { PlantService } from 'src/app/service/plant.service';
 import { Plantas } from 'src/app/modelos/plantas';
 import { Subject, takeUntil } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ver-planta',
@@ -14,6 +15,7 @@ export class VerPlantaComponent implements OnInit {
   categoyInstance = new Subject();
   plantas: Plantas[] = [];
   categoria_id: any;
+  base_backend_url: string = environment.backendStorageUrl;
   constructor(private plantasService: PlantService,
               private activatedRoute: ActivatedRoute) {
 
@@ -33,5 +35,4 @@ export class VerPlantaComponent implements OnInit {
       this.plantas = data;
     });
   }
-
 }

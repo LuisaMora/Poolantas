@@ -4,9 +4,9 @@
       <section class="grid-container">
         <div *ngFor="let categoria of categoria" class="grid-item">
             <mat-card class="example-card">
-              <img mat-card-image [src]="categoria.imageUrl" alt="Photo of a Shiba Inu" class="card-image">
+              <img mat-card-image [src]="categoria.img" alt="Photo of a Shiba Inu" class="card-image">
               <mat-card-content>
-                <p>{{categoria.type}}</p>
+                <p>{{categoria.name}}</p>
               </mat-card-content>
             </mat-card>
         </div>
